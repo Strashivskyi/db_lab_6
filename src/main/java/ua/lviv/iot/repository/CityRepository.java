@@ -1,4 +1,15 @@
 package ua.lviv.iot.repository;
 
-public interface CityRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import ua.lviv.iot.domain.AmusementPark;
+import ua.lviv.iot.domain.City;
+
+import java.util.List;
+
+@Repository
+public interface CityRepository extends JpaRepository<City, Integer> {
+
+  List<City> getCitiesByRegionId(Integer regionId);
+
 }
